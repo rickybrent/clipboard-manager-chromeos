@@ -1,0 +1,32 @@
+{
+    "name": "Clipboard Manager",
+    "short_name": "Clipboard Manager",
+    "version": "0.0.2",
+    "manifest_version": 2,
+    "minimum_chrome_version": "48",
+    "description": "Clipboard history and management for ChromeOS.",
+    "offline_enabled": true,
+    "permissions": [
+      "clipboardRead",
+      "clipboardWrite",
+      "contextMenus",
+      "storage"
+    ],
+    "app": {
+      "background": {
+        "scripts": ["manager.js"]
+      }
+    },
+    "icons": {
+        "128": "icons/paste-nonflat.png"
+    },
+    "commands": {
+      "show-clipboard-history": {
+        "suggested_key": {
+          "default": "Alt+V"
+        },
+        "description": "Shows the clipboard history.",
+        "global": true
+      }
+    }
+}

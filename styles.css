@@ -1,0 +1,266 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100px;
+  min-width: 100px;
+}
+#cliphistory {
+  overflow-x:hidden;
+  overflow-y:scroll;
+  max-height:500px;
+}
+ol {
+  list-style-type:none;
+  margin:0;
+  padding:0;
+  display: flex;
+  flex-flow: column wrap;
+  overflow: hidden;
+}
+ol li{
+  padding: 8px 25px;
+  width:100%;
+  height:15px;
+}
+ol li:hover {
+  background: #ebebeb;
+}
+/*
+ol li:first-child, ol li:first-child input  {
+  font-weight:bold;
+}
+ol li:nth-child(odd) { background: #eff0f1;}
+*/
+ol li.active, ol li.active input {
+  font-weight:bold;
+  background: #ebebeb;
+}
+ol li span,
+ol li input {
+  white-space:nowrap;
+  display:inline-block;
+  border:none;
+  background:none;
+  cursor:default;
+  width:calc(100% - 100px);
+  overflow:hidden;
+  text-overflow:ellipsis;
+  margin-right:8px;
+}
+ol,ol li,
+ol li input {
+  font-size:12px;
+  overflow:hidden;
+}
+ol li textarea {
+  width:32px; height:4px; margin-left:-2000px; padding:0;
+  opacity:0;
+}
+
+#cliplist li a.clearbtn:before {
+  content: "\2297";
+  font-weight: normal !important;
+  visibility: hidden;
+  float: right;
+  margin-right: 34px;
+  margin-top: -4px;
+  font-size: 14px;
+  color: #b4b4b4;
+}
+#cliplist li:hover a.clearbtn:before {
+  visibility:visible;
+}
+
+ol li:before {
+  content: '';
+  background: white;
+  border-radius: 100%;
+  border: 1.3px solid #b4b4b4;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  position: relative;
+  top: 0;
+  margin-right: 1em;
+  vertical-align: top;
+  cursor: pointer;
+  text-align: center;
+  transition: all 100ms ease;
+}
+ol li:first-child:before {
+  background-color: #3197EE;
+  border-color: #3197EE;
+  box-shadow:inset 0 0 0 2.5px white;
+}
+ol li:hover {
+  background-color: #ebebeb;
+}
+ol li:first-child:hover:before {
+  background-color: #b4b4b4;
+  border-color: #b4b4b4;
+}
+/* fade effect? currently disabled. */
+.fader {
+    position: absolute;
+    top: 0;
+    left: -100px;
+    margin-left: 100%;
+    background: linear-gradient(to left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    height: 50px;
+    width: 50px;
+}
+#clipsearch input, #cliplist input {
+  border:none !important;
+}
+#clipsearch input {
+  width: 100%;
+  padding:0;
+  margin:0;
+}
+#clipsearch input:valid {
+  -webkit-app-region: no-drag;
+}
+#clipsearch {
+  -webkit-app-region: drag;
+  border-radius: 14px 14px 0 0;
+  border-bottom:1px solid lightgrey;
+  padding: 8px 64px 8px 53px;
+  height:16px;
+}
+
+#managelinks {
+  border-radius: 0 0 14px 14px;
+  border-top:1px solid lightgrey;
+}
+#managelinks li:before{
+  visibility:hidden;
+}
+textarea:focus, input:focus{
+ outline: none;
+}
+
+
+/* Window decoration. */
+.topbar {
+  -webkit-app-region: drag;
+}
+.topbar #buttons {
+  position: absolute;
+  width: 100%;
+  text-align: right;
+  font-size: 24px;
+  color: #555;
+  padding-right: 5px;
+  display: block;
+  height: 1px;
+  top:0;
+  left:0;
+}
+.topbar #buttons span:hover {
+  background:#e0e0e0;
+  transition: all 250ms ease;
+}
+.topbar #buttons span {
+  display:block;
+  width:32px;
+  float:right;
+  text-align:center;
+  -webkit-app-region: no-drag;
+  font-family: 'Roboto Mono';
+  font-weight: 900;
+  height:25px;
+}
+
+.topbar #buttons #minimize {
+  font-size: 17px;
+  padding-top: 11.4px;
+  font-weight: 550;
+  height: 20.8px;
+  position: absolute;
+  left: 177px;
+}
+.topbar #buttons #minimize::before {
+  content: "\2500";
+}
+
+.topbar #buttons #maximize {
+  font-size: 17px;
+  padding-top: 7px;
+  margin-left: -1px;
+  font-weight:1000;
+}
+.topbar #buttons #maximize::Before {
+  content: "\25A1";
+}
+
+.topbar #buttons #close {
+  font-size: 12.6px;
+  padding-top: 7.6px;
+  margin-left: 0;
+}
+.topbar #buttons #close::before {
+  content: "\2A09";
+}
+
+#cliplist:empty {
+  background: lime;
+  background:#eeeeee;
+  color:#6d6d6d;
+  padding:10px 10px;
+  text-align:center;
+  min-height:32px;
+}
+#cliplist:empty::before {
+  content: url(icons/paste3c.png);
+}
+#cliplist:empty::after {
+  content: "Clipboard cleared.";
+  font-weight: 450;
+  font-family: Roboto;
+  margin: 5px 0 0px;
+  font-size: 14px;
+  font-style: italic;
+  opacity: 0.5;
+}
+
+.alttheme #cliplist {
+  background:#eeeeee;
+  color:#6d6d6d;
+  padding:10px 0;
+}
+.alttheme #cliplist ol li {
+  width: calc(100% - 49px);
+  height: 15px;
+  background: white !important;
+  padding: 10px;
+  margin: 6px 14px;
+  box-shadow: 1px 1px 5px #aaa;
+}
+
+
+.optionsBody {
+  padding:12px;
+  text-align:left;
+}
+.optionsBody input[type="text"],
+.optionsBody input[type="number"]{
+  width: 100%;
+  margin: 0;
+  height: 100%;
+  padding: 4px;
+}
+
+tr td,
+tr th {
+  text-align:left;
+  font-size:14px;
+  padding:10px 0px;
+}
+tr {}
+th {
+  min-width: 250px;
+  font-weight: normal;
+}
+#keyboardShortcutsMessage {
+  font-size:14px;
+}
