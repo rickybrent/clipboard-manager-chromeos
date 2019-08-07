@@ -18,7 +18,7 @@
       }
     },
     "icons": {
-        "128": "icons/paste4.png"
+        "128": "icons/clipboard.png"
     },
     "commands": {
       "show-clipboard-history": {

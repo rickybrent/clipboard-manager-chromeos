@@ -29,7 +29,6 @@ function getClipboardText() {
     return 'FAILED';
 }
 
-
 function setClipboardText(text) {
     var textarea = getTextarea(text);
     return (document.execCommand("copy") && (getClipboardText() == text));
@@ -103,7 +102,7 @@ function loadPopup(e, selectId) {
       'focused': (selectId ? false : true)  // Must set for panel mode.
     };
     if (settings.type == "panel") {
-      options.icon = 'icons/paste3c.png';
+      options.icon = 'icons/clipboard-symbolic.png';
       options.type = 'panel';
       option.focused = true;
     }
@@ -115,7 +114,7 @@ function loadPopup(e, selectId) {
       popup.contentWindow.onload = function () {
         initPopup(popup, selectId);
       };
-      popup.innerBounds.top = window.screen.availHeight - appwindow.innerBounds.height;
+      popup.innerBounds.top = window.screen.availHeight - popup.innerBounds.height;
     });
   } else {
     initPopup(popup, selectId);
