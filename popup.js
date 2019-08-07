@@ -148,10 +148,6 @@ function sizeWindow(requested){
 function copyElement(input) {
   input.select();
   input.focus();
-  var selection = document.getSelection();
-  var range = document.createRange();
-  range.selectNode(input);
-  selection.addRange(range);
   return document.execCommand('copy', true);
 }
 
