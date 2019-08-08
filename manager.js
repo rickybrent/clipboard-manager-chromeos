@@ -6,8 +6,7 @@ var default_settings = {
   no_cache:false,
   notification:false,
   custom_icon:false,
-  keep_open:false,
-  type:'shell'
+  keep_open:false
 };
 
 
@@ -96,16 +95,10 @@ function loadPopup(e, selectId) {
         'height': 270
       },
       'id': 'clipboard_popup',
-      'type':'shell',
       'frame':'none',
       'hidden':true,  // Start hidden for using a popup to copy text.
       'focused': (selectId ? false : true)  // Must set for panel mode.
     };
-    if (settings.type == "panel") {
-      options.icon = 'icons/clipboard-symbolic.png';
-      options.type = 'panel';
-      option.focused = true;
-    }
     if (settings.custom_icon) {
       options.icon = settings.custom_icon;
     }
