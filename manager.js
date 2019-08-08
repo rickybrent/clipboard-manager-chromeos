@@ -248,3 +248,4 @@ chrome.app.runtime.onLaunched.addListener(function(){
 chrome.runtime.onInstalled.addListener(function() {
   init();
 });
+init(loadPopup);
