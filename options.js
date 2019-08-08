@@ -28,6 +28,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       }
     }
-    chrome.app.window.current().innerBounds.height = document.body.clientHeight;
   });
 });

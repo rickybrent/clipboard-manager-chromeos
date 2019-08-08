@@ -91,7 +91,7 @@ function loadPopup(e, selectId) {
   popup = chrome.app.window.get('clipboard_popup');
   if (!popup) {
     options = {
-      'bounds': {
+      'innerBounds': {
         'width': 270,
         'height': 270
       },
@@ -122,7 +122,12 @@ function loadPopup(e, selectId) {
 }
 
 function showOptions(){
-  chrome.app.window.create("options.html")
+  chrome.app.window.create("options.html", {
+    'innerBounds': {
+      'width': 507,
+      'height': 164
+    }
+  })
 }
 
 function dedupe() {
