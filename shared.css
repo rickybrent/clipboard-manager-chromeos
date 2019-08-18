@@ -1,4 +1,38 @@
+:root {
+  --theme-fg-color: #000000;
+  --theme-bg-color: #ffffff; /* The main background for the popup window. */
+  --theme-accent-bg-color: #ebebeb; /* Active element in the paste selection screen and inputs in settings. */
+  --theme-input-accent-color: #1a73e8; /* Accent color for active input elements. */  
+  --theme-border-color: #b4b4b4;
+  --theme-section-border-color: #d3d3d3;
+}
+
+body[data-theme="dark"] {
+  --theme-fg-color: #cdc8c0;
+  --theme-bg-color: #28292c;
+  --theme-accent-bg-color: #555555;
+  --theme-input-accent-color: #1a73e8;
+  --theme-border-color: #555555;
+  --theme-section-border-color: #1b1b1b;
+}
+
+body[data-theme="black"] {
+  --theme-fg-color: #cdc8c0;
+  --theme-bg-color: #000000;
+  --theme-accent-bg-color: #2e2e2e;
+  --theme-input-accent-color: #1a73e8;
+  --theme-border-color: #2e2e2e;
+  --theme-section-border-color: #1b1b1b;
+}
+
+input {
+  background-color:transparent;
+  color:var(--theme-fg-color);
+}
+
 body {
+  background-color: var(--theme-bg-color);
+  color: var(--theme-fg-color);
   margin: 0;
   padding: 0;
   min-height: 100px;
@@ -23,17 +57,11 @@ ol li{
   height:15px;
 }
 ol li:hover {
-  background: #ebebeb;
+  background: var(--theme-accent-bg-color);
 }
-/*
-ol li:first-child, ol li:first-child input  {
-  font-weight:bold;
-}
-ol li:nth-child(odd) { background: #eff0f1;}
-*/
 ol li.active, ol li.active input {
   font-weight:bold;
-  background: #ebebeb;
+  background: var(--theme-accent-bg-color);
 }
 ol li span,
 ol li input {
@@ -65,7 +93,7 @@ ol li textarea {
   margin-right: 34px;
   margin-top: -4px;
   font-size: 14px;
-  color: #b4b4b4;
+  color: var(--theme-border-color);
 }
 #cliplist li:hover a.clearbtn:before {
   visibility:visible;
@@ -73,9 +101,9 @@ ol li textarea {
 
 ol li:before {
   content: '';
-  background: white;
+  background: var(--theme-bg-color);
   border-radius: 100%;
-  border: 1.3px solid #b4b4b4;
+  border: 1.3px solid var(--theme-border-color);
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -90,25 +118,16 @@ ol li:before {
 ol li:first-child:before {
   background-color: #3197EE;
   border-color: #3197EE;
-  box-shadow:inset 0 0 0 2.5px white;
+  box-shadow:inset 0 0 0 2.5px var(--theme-bg-color);
 }
 ol li:hover {
-  background-color: #ebebeb;
+  background-color: var(--theme-accent-bg-color);
 }
 ol li:first-child:hover:before {
-  background-color: #b4b4b4;
-  border-color: #b4b4b4;
+  background-color: var(--theme-border-color);
+  border-color: var(--theme-border-color);
 }
-/* fade effect? currently disabled. */
-.fader {
-    position: absolute;
-    top: 0;
-    left: -100px;
-    margin-left: 100%;
-    background: linear-gradient(to left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
-    height: 50px;
-    width: 50px;
-}
+
 #clipsearch input, #cliplist input {
   border:none !important;
 }
@@ -123,14 +142,14 @@ ol li:first-child:hover:before {
 #clipsearch {
   -webkit-app-region: drag;
   border-radius: 14px 14px 0 0;
-  border-bottom:1px solid lightgrey;
+  border-bottom:1px solid var(--theme-section-border-color);
   padding: 8px 64px 8px 53px;
   height:16px;
 }
 
 #managelinks {
   border-radius: 0 0 14px 14px;
-  border-top:1px solid lightgrey;
+  border-top:1px solid var(--theme-section-border-color);
 }
 #managelinks li:before{
   visibility:hidden;
@@ -149,15 +168,18 @@ textarea:focus, input:focus{
   width: 100%;
   text-align: right;
   font-size: 24px;
-  color: #555;
   padding-right: 5px;
   display: block;
   height: 1px;
   top:0;
   left:0;
 }
+.topbar #buttons *{
+  opacity:0.70;
+}
+
 .topbar #buttons span:hover {
-  background:#e0e0e0;
+  background: var(--theme-accent-bg-color);
   transition: all 250ms ease;
 }
 .topbar #buttons span {
@@ -203,15 +225,15 @@ textarea:focus, input:focus{
 }
 
 #cliplist:empty {
-  background: lime;
-  background:#eeeeee;
-  color:#6d6d6d;
+  color: var(--theme-fg-color);
+  background: var(--theme-accent-bg-color);
+  opacity:0.85;
   padding:10px 10px;
   text-align:center;
   min-height:32px;
 }
 #cliplist:empty::before {
-  content: url(icons/clipboard-outline.png);
+  content: url(icons/clipboard-symbolic.png);
 }
 #cliplist:empty::after {
   content: "Clipboard cleared.";
@@ -221,46 +243,4 @@ textarea:focus, input:focus{
   font-size: 14px;
   font-style: italic;
   opacity: 0.5;
-}
-
-.alttheme #cliplist {
-  background:#eeeeee;
-  color:#6d6d6d;
-  padding:10px 0;
-}
-.alttheme #cliplist ol li {
-  width: calc(100% - 49px);
-  height: 15px;
-  background: white !important;
-  padding: 10px;
-  margin: 6px 14px;
-  box-shadow: 1px 1px 5px #aaa;
-}
-
-
-.optionsBody {
-  padding:12px;
-  text-align:left;
-}
-.optionsBody input[type="text"],
-.optionsBody input[type="number"]{
-  width: 100%;
-  margin: 0;
-  height: 100%;
-  padding: 4px;
-}
-
-tr td,
-tr th {
-  text-align:left;
-  font-size:14px;
-  padding:10px 0px;
-}
-tr {}
-th {
-  min-width: 250px;
-  font-weight: normal;
-}
-#keyboardShortcutsMessage {
-  font-size:14px;
 }

@@ -1,7 +1,7 @@
 {
     "name": "Clipboard Manager",
     "short_name": "Clipboard Manager",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "manifest_version": 2,
     "minimum_chrome_version": "48",
     "description": "Clipboard history and management for ChromeOS.",

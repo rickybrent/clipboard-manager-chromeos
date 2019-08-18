@@ -6,7 +6,8 @@ var default_settings = {
   no_cache:false,
   notification:false,
   custom_icon:false,
-  keep_open:false
+  keep_open:false,
+  theme:"Light"
 };
 
 
@@ -117,9 +118,10 @@ function loadPopup(e, selectId) {
 function showOptions(){
   chrome.app.window.create("options.html", {
     'innerBounds': {
-      'width': 507,
-      'height': 164
-    }
+      'width': 524,
+      'height': 226
+    },
+    'id': 'clipboard_popup_options'
   })
 }
 

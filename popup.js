@@ -16,6 +16,8 @@ function closePopup(e) {
 
 function receiveMessage(event) {
   if (event.isTrusted) {
+	document.getElementsByTagName("body")[0].setAttribute("data-theme", window.settings["theme"]);
+
     var previewSize = window.settings ? (window.settings.preview_size -1) : 30;
     var cliplist = window.cliplist;
     window.activeLi = 0;

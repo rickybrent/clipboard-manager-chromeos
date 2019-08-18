@@ -1,0 +1,112 @@
+.optionsBody {
+  padding:0;
+  text-align:left;
+}
+.optionsBody table {
+  margin: -24px -2px 0;
+  /*-12px -2px 0*/
+}
+
+select,
+.optionsBody input[type="text"],
+.optionsBody input[type="number"]{
+  width: 210px;
+  margin: 0;
+  height: 100%;
+  min-height: 32px;
+  background-color: var(--theme-accent-bg-color);
+  border-width: 2px 0px;
+  border-color: transparent;
+  border-radius: 5px;
+  box-sizing: border-box;
+  caret-color: var(--theme-input-accent-color);
+  outline: none;
+  padding: 4px 8px;
+  transition: all 0.3s ease;
+  -webkit-appearance: none;
+  color: var(--theme-fg-color);
+}
+
+select {
+  -webkit-appearance: menulist-button;
+  border-width:2px;
+}
+
+.optionsBody input[type="text"]:focus,
+.optionsBody input[type="number"]:focus{
+	border-bottom-color:var(--theme-input-accent-color);
+}
+select:focus, select:focus-within{
+	border-color:var(--theme-input-accent-color);
+}
+
+tr td,
+tr th {
+  text-align:left;
+  font-size:14px;
+  padding:10px 12px;
+}
+tr {
+  border-top: 1px solid rgb(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  padding: 0px 8px;
+}
+
+tr:first-child {
+  border-top:none;
+  margin-top: 20px;
+}
+
+th {
+  min-width: 250px;
+  font-weight: normal;
+}
+#keyboardShortcutsMessage {
+  font-size:14px;
+}
+
+
+/* Created using https://proto.io/freebies/onoff/ */
+:root {
+  --onoffswitch-width: 32px;
+}
+
+.onoffswitch {
+	margin:10px 172px;
+    position: relative; width: var(--onoffswitch-width);
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    height: 12px; padding: 0; line-height: 12px;
+    border: 0px solid #FFFFFF; border-radius: 18px;
+    background-color: #C2C2C2;
+}
+.onoffswitch-label:before {
+    content: "";
+    display: block; width: 18px; margin: -3px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 19px;
+	transition: all 0.3s ease;
+    border-radius: 18px;
+    box-shadow: 0 6px 12px 0px #757575;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label {
+    background-color: #88BAE3;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label, .onoffswitch-checkbox:checked + .onoffswitch-label:before {
+   border-color: #88BAE3;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label:before {
+    right: 0px; 
+    background-color: #1A73E8; 
+    box-shadow: 3px 6px 18px 0px rgba(0, 0, 0, 0.2);
+}

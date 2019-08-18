@@ -2,20 +2,12 @@
 <html>
   <head>
     <script src="options.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="options.css">
     <title>Clipboard Manager</title>
   </head>
 
   <body class="optionsBody">
-    <!--
-  history_size:15,
-  preview_size:30,
-  refresh_ms:1000,
-  no_cache:false,
-  notification:false,
-  custom_icon:false,
-  keep_open:false
-  -->
     <table id="options">
       <tr>
         <th>History Size</th>
@@ -33,7 +25,20 @@
       -->
       <tr>
         <th>Disable cache</th>
-        <td><input name="no_cache" type="checkbox" /></td>
+        <td>
+<div class="onoffswitch">
+    <input type="checkbox" name="no_cache" class="onoffswitch-checkbox" id="no_cache" checked>
+    <label class="onoffswitch-label" for="no_cache"></label>
+</div>			
+      </tr>
+      <tr>
+        <th>Theme</th>
+        <td>
+          <select name="theme">
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+          </select>
+        </td>
       </tr>
       <!--
       <tr>

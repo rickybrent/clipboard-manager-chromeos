@@ -5,6 +5,7 @@
 function saveSettings(){
   chrome.runtime.getBackgroundPage(function(o) {
     o.settings = window.settings;
+    document.getElementsByTagName("body")[0].setAttribute("data-theme", o.settings["theme"]);
     o.saveSettings();
   });
 }
@@ -12,6 +13,7 @@ function saveSettings(){
 document.addEventListener('DOMContentLoaded', function() {
   chrome.runtime.getBackgroundPage(function(o) {
     window.settings = o.settings;
+	document.getElementsByTagName("body")[0].setAttribute("data-theme", o.settings["theme"]);
     var table = document.getElementById("options");
     var keys = Object.keys(o.settings);
     for (var i in keys) {
@@ -27,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
           saveSettings();
         });
       }
+	  console.log("i", keys[i], val, input);
     }
   });
 });
