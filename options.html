@@ -1,46 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <script src="options.js"></script>
     <link rel="stylesheet" href="shared.css">
     <link rel="stylesheet" href="options.css">
     <title>Clipboard Manager</title>
-  </head>
+</head>
 
-  <body class="optionsBody">
+<body class="optionsBody">
     <table id="options">
-      <tr>
-        <th>History Size</th>
-        <td><input name="history_size" type="number" /></td>
-      </tr>
-      <tr>
-        <th>Preview size (characters)</th>
-        <td><input name="preview_size" type="number" /></td>
-      </tr>
-      <!--
+        <tr>
+            <th>History Size</th>
+            <td><input name="history_size" type="number" /></td>
+        </tr>
+        <tr>
+            <th>Preview size (characters)</th>
+            <td><input name="preview_size" type="number" /></td>
+        </tr>
+        <!--
       <tr>
         <th>Refresh interval (ms)</th>
         <td><input name="refresh_ms" type="number" /></td>
       </tr>
       -->
-      <tr>
-        <th>Disable cache</th>
-        <td>
-<div class="onoffswitch">
-    <input type="checkbox" name="no_cache" class="onoffswitch-checkbox" id="no_cache" checked>
-    <label class="onoffswitch-label" for="no_cache"></label>
-</div>			
-      </tr>
-      <tr>
-        <th>Theme</th>
-        <td>
-          <select name="theme">
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
-          </select>
-        </td>
-      </tr>
-      <!--
+        <tr>
+            <th>Disable cache</th>
+            <td>
+                <div class="onoffswitch">
+                    <input type="checkbox" name="no_cache" class="onoffswitch-checkbox" id="no_cache" checked>
+                    <label class="onoffswitch-label" for="no_cache"></label>
+                </div>
+        </tr>
+        <tr>
+            <th>Theme</th>
+            <td>
+                <select name="theme">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                </select>
+            </td>
+        </tr>
+        <!--
       <tr>
         <th>Show notification on copy</th>
         <td><input name="notification" type="number" /></td>
@@ -55,5 +56,6 @@
       </tr>
       -->
     </table>
-  </body>
+</body>
+
 </html>

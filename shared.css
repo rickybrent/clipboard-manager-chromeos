@@ -1,246 +1,281 @@
 :root {
-  --theme-fg-color: #000000;
-  --theme-bg-color: #ffffff; /* The main background for the popup window. */
-  --theme-accent-bg-color: #ebebeb; /* Active element in the paste selection screen and inputs in settings. */
-  --theme-input-accent-color: #1a73e8; /* Accent color for active input elements. */  
-  --theme-border-color: #b4b4b4;
-  --theme-section-border-color: #d3d3d3;
+    --theme-fg-color: #000000;
+    --theme-bg-color: #ffffff;
+    /* The main background for the popup window. */
+    --theme-accent-bg-color: #ebebeb;
+    /* Active element in the paste selection screen and inputs in settings. */
+    --theme-input-accent-color: #1a73e8;
+    /* Accent color for active input elements. */
+    --theme-border-color: #b4b4b4;
+    --theme-section-border-color: #d3d3d3;
 }
 
 body[data-theme="dark"] {
-  --theme-fg-color: #cdc8c0;
-  --theme-bg-color: #28292c;
-  --theme-accent-bg-color: #555555;
-  --theme-input-accent-color: #1a73e8;
-  --theme-border-color: #555555;
-  --theme-section-border-color: #1b1b1b;
+    --theme-fg-color: #e8eaed;
+    --theme-bg-color: #28292c;
+    --theme-accent-bg-color: #555555;
+    --theme-input-accent-color: #1a73e8;
+    --theme-border-color: #555555;
+    --theme-section-border-color: #1b1b1b;
 }
 
 body[data-theme="black"] {
-  --theme-fg-color: #cdc8c0;
-  --theme-bg-color: #000000;
-  --theme-accent-bg-color: #2e2e2e;
-  --theme-input-accent-color: #1a73e8;
-  --theme-border-color: #2e2e2e;
-  --theme-section-border-color: #1b1b1b;
+    --theme-fg-color: #e8eaed;
+    --theme-bg-color: #000000;
+    --theme-accent-bg-color: #2e2e2e;
+    --theme-input-accent-color: #1a73e8;
+    --theme-border-color: #2e2e2e;
+    --theme-section-border-color: #1b1b1b;
 }
 
 input {
-  background-color:transparent;
-  color:var(--theme-fg-color);
+    background-color: transparent;
+    color: var(--theme-fg-color);
 }
 
 body {
-  background-color: var(--theme-bg-color);
-  color: var(--theme-fg-color);
-  margin: 0;
-  padding: 0;
-  min-height: 100px;
-  min-width: 100px;
+    background-color: var(--theme-bg-color);
+    color: var(--theme-fg-color);
+    margin: 0;
+    padding: 0;
+    min-height: 100px;
+    min-width: 100px;
 }
+
 #cliphistory {
-  overflow-x:hidden;
-  overflow-y:scroll;
-  max-height:500px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 500px;
 }
+
 ol {
-  list-style-type:none;
-  margin:0;
-  padding:0;
-  display: flex;
-  flex-flow: column wrap;
-  overflow: hidden;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: column wrap;
+    overflow: hidden;
 }
-ol li{
-  padding: 8px 25px;
-  width:100%;
-  height:15px;
+
+ol li {
+    padding: 8px 25px;
+    width: 100%;
+    height: 15px;
 }
+
 ol li:hover {
-  background: var(--theme-accent-bg-color);
+    background: var(--theme-accent-bg-color);
 }
-ol li.active, ol li.active input {
-  font-weight:bold;
-  background: var(--theme-accent-bg-color);
+
+ol li.active,
+ol li.active input {
+    font-weight: bold;
+    background: var(--theme-accent-bg-color);
 }
+
 ol li span,
 ol li input {
-  white-space:nowrap;
-  display:inline-block;
-  border:none;
-  background:none;
-  cursor:default;
-  width:calc(100% - 100px);
-  overflow:hidden;
-  text-overflow:ellipsis;
-  margin-right:8px;
+    white-space: nowrap;
+    display: inline-block;
+    border: none;
+    background: none;
+    cursor: default;
+    width: calc(100% - 100px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 8px;
 }
-ol,ol li,
+
+ol,
+ol li,
 ol li input {
-  font-size:12px;
-  overflow:hidden;
+    font-size: 12px;
+    overflow: hidden;
 }
+
 ol li textarea {
-  width:32px; height:4px; margin-left:-2000px; padding:0;
-  opacity:0;
+    width: 32px;
+    height: 4px;
+    margin-left: -2000px;
+    padding: 0;
+    opacity: 0;
 }
 
 #cliplist li a.clearbtn:before {
-  content: "\2297";
-  font-weight: normal !important;
-  visibility: hidden;
-  float: right;
-  margin-right: 34px;
-  margin-top: -4px;
-  font-size: 14px;
-  color: var(--theme-border-color);
+    content: "\2297";
+    font-weight: normal !important;
+    visibility: hidden;
+    float: right;
+    margin-right: 34px;
+    margin-top: -4px;
+    font-size: 14px;
+    color: var(--theme-border-color);
 }
+
 #cliplist li:hover a.clearbtn:before {
-  visibility:visible;
+    visibility: visible;
 }
 
 ol li:before {
-  content: '';
-  background: var(--theme-bg-color);
-  border-radius: 100%;
-  border: 1.3px solid var(--theme-border-color);
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  position: relative;
-  top: 0;
-  margin-right: 1em;
-  vertical-align: top;
-  cursor: pointer;
-  text-align: center;
-  transition: all 100ms ease;
-}
-ol li:first-child:before {
-  background-color: #3197EE;
-  border-color: #3197EE;
-  box-shadow:inset 0 0 0 2.5px var(--theme-bg-color);
-}
-ol li:hover {
-  background-color: var(--theme-accent-bg-color);
-}
-ol li:first-child:hover:before {
-  background-color: var(--theme-border-color);
-  border-color: var(--theme-border-color);
+    content: '';
+    background: var(--theme-bg-color);
+    border-radius: 100%;
+    border: 1.3px solid var(--theme-border-color);
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: 0;
+    margin-right: 1em;
+    vertical-align: top;
+    cursor: pointer;
+    text-align: center;
+    transition: all 100ms ease;
 }
 
-#clipsearch input, #cliplist input {
-  border:none !important;
+ol li:first-child:before {
+    background-color: #3197EE;
+    border-color: #3197EE;
+    box-shadow: inset 0 0 0 2.5px var(--theme-bg-color);
 }
+
+ol li:hover {
+    background-color: var(--theme-accent-bg-color);
+}
+
+ol li:first-child:hover:before {
+    background-color: var(--theme-border-color);
+    border-color: var(--theme-border-color);
+}
+
+#clipsearch input,
+#cliplist input {
+    border: none !important;
+}
+
 #clipsearch input {
-  width: 100%;
-  padding:0;
-  margin:0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
+
 #clipsearch input:valid {
-  -webkit-app-region: no-drag;
+    -webkit-app-region: no-drag;
 }
+
 #clipsearch {
-  -webkit-app-region: drag;
-  border-radius: 14px 14px 0 0;
-  border-bottom:1px solid var(--theme-section-border-color);
-  padding: 8px 64px 8px 53px;
-  height:16px;
+    -webkit-app-region: drag;
+    border-radius: 14px 14px 0 0;
+    border-bottom: 1px solid var(--theme-section-border-color);
+    padding: 8px 64px 8px 53px;
+    height: 16px;
 }
 
 #managelinks {
-  border-radius: 0 0 14px 14px;
-  border-top:1px solid var(--theme-section-border-color);
+    border-radius: 0 0 14px 14px;
+    border-top: 1px solid var(--theme-section-border-color);
 }
-#managelinks li:before{
-  visibility:hidden;
+
+#managelinks li:before {
+    visibility: hidden;
 }
-textarea:focus, input:focus{
- outline: none;
+
+textarea:focus,
+input:focus {
+    outline: none;
 }
 
 
 /* Window decoration. */
 .topbar {
-  -webkit-app-region: drag;
+    -webkit-app-region: drag;
 }
+
 .topbar #buttons {
-  position: absolute;
-  width: 100%;
-  text-align: right;
-  font-size: 24px;
-  padding-right: 5px;
-  display: block;
-  height: 1px;
-  top:0;
-  left:0;
+    position: absolute;
+    width: 100%;
+    text-align: right;
+    font-size: 24px;
+    padding-right: 5px;
+    display: block;
+    height: 1px;
+    top: 0;
+    left: 0;
 }
-.topbar #buttons *{
-  opacity:0.70;
+
+.topbar #buttons * {
+    opacity: 0.70;
 }
 
 .topbar #buttons span:hover {
-  background: var(--theme-accent-bg-color);
-  transition: all 250ms ease;
+    background: var(--theme-accent-bg-color);
+    transition: all 250ms ease;
 }
+
 .topbar #buttons span {
-  display:block;
-  width:32px;
-  float:right;
-  text-align:center;
-  -webkit-app-region: no-drag;
-  font-family: 'Roboto Mono';
-  font-weight: 900;
-  height:25px;
+    display: block;
+    width: 32px;
+    float: right;
+    text-align: center;
+    -webkit-app-region: no-drag;
+    font-family: 'Roboto Mono';
+    font-weight: 900;
+    height: 25px;
 }
 
 .topbar #buttons #minimize {
-  font-size: 17px;
-  padding-top: 11.4px;
-  font-weight: 550;
-  height: 20.8px;
-  position: absolute;
-  left: 177px;
+    font-size: 17px;
+    padding-top: 11.4px;
+    font-weight: 550;
+    height: 20.8px;
+    position: absolute;
+    left: 177px;
 }
+
 .topbar #buttons #minimize::before {
-  content: "\2500";
+    content: "\2500";
 }
 
 .topbar #buttons #maximize {
-  font-size: 17px;
-  padding-top: 7px;
-  margin-left: -1px;
-  font-weight:1000;
+    font-size: 17px;
+    padding-top: 7px;
+    margin-left: -1px;
+    font-weight: 1000;
 }
+
 .topbar #buttons #maximize::Before {
-  content: "\25A1";
+    content: "\25A1";
 }
 
 .topbar #buttons #close {
-  font-size: 12.6px;
-  padding-top: 7.6px;
-  margin-left: 0;
+    font-size: 12.6px;
+    padding-top: 7.6px;
+    margin-left: 0;
 }
+
 .topbar #buttons #close::before {
-  content: "\2A09";
+    content: "\2A09";
 }
 
 #cliplist:empty {
-  color: var(--theme-fg-color);
-  background: var(--theme-accent-bg-color);
-  opacity:0.85;
-  padding:10px 10px;
-  text-align:center;
-  min-height:32px;
+    color: var(--theme-fg-color);
+    background: var(--theme-accent-bg-color);
+    opacity: 0.85;
+    padding: 10px 10px;
+    text-align: center;
+    min-height: 32px;
 }
+
 #cliplist:empty::before {
-  content: url(icons/clipboard-symbolic.png);
+    content: url(icons/clipboard-symbolic.png);
 }
+
 #cliplist:empty::after {
-  content: "Clipboard cleared.";
-  font-weight: 450;
-  font-family: Roboto;
-  margin: 5px 0 0px;
-  font-size: 14px;
-  font-style: italic;
-  opacity: 0.5;
+    content: "Clipboard cleared.";
+    font-weight: 450;
+    font-family: Roboto;
+    margin: 5px 0 0px;
+    font-size: 14px;
+    font-style: italic;
+    opacity: 0.5;
 }
